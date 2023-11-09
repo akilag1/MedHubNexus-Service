@@ -33,4 +33,14 @@ public class CustomerService {
         }
         return "The Customer Not Exists";
     }
+
+    public String deleteCustomer(int id) {
+        Optional<Customer> existCustomer = customerDao.findById(id);
+        if (existCustomer.isPresent()){
+            customerDao.deleteById(id);
+            return "Deletion Successful";
+        }
+        return "Deletion Fail";
+
+    }
 }

@@ -53,4 +53,13 @@ public class CustomerController {
             return new ResponseEntity<>(customerService.updateCustomer(customer), HttpStatus.BAD_REQUEST);
         }
     }
+
+    @DeleteMapping("delete")
+    public ResponseEntity<String> deleteCustomer(@RequestParam int id){
+        try {
+            return new ResponseEntity<>(customerService.deleteCustomer(id), HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>(customerService.deleteCustomer(id), HttpStatus.BAD_REQUEST);
+        }
+    }
 }
