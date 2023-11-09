@@ -44,4 +44,13 @@ public class CustomerController {
             return new ResponseEntity<>("Creation Fail", HttpStatus.BAD_REQUEST);
         }
     }
+
+    @PutMapping("updateCustomer")
+    public ResponseEntity<String> updateCustomer(@RequestBody Customer customer){
+        try {
+            return new ResponseEntity<>(customerService.updateCustomer(customer), HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>(customerService.updateCustomer(customer), HttpStatus.BAD_REQUEST);
+        }
+    }
 }
