@@ -19,4 +19,5 @@ public class CustomerService {
 
     public Customer getCustomerById(int id) { return customerDao.findById(id).get(); }
 
+    public void createCustomer(Customer customer) { customerDao.save(customer); }
 }
