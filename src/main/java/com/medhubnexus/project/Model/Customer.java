@@ -16,7 +16,7 @@ public class Customer {
     private String password;
     private String nic;
     private String address;
-    private long telNumber;
+    private String telNumber;
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private Date dateOfBirth;
